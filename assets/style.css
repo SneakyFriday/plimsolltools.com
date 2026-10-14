@@ -1,0 +1,106 @@
+/* Plimsoll Tools – one stylesheet, no external requests */
+@font-face { font-family: "Barlow"; src: url("fonts/Barlow-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("fonts/Barlow-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("fonts/BarlowCondensed-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  /* brand, fixed in both modes */
+  --hull: #1F3A4D;
+  --paint: #EDEFEA;
+  --signal: #C2553F;      /* accent on hull blue */
+  --antifouling: #A2412F; /* red band */
+  --hull-text: #B0C2CD;
+  /* content, light */
+  --bg: #F3F5F5;
+  --surface: #FFFFFF;
+  --ink: #1F3A4D;
+  --ink-soft: #4E6878;
+  --rule: #D3DCE0;
+  --accent: #A2412F;
+  --mark-top: var(--hull);
+  --mark-low: var(--antifouling);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #13222E;
+    --surface: #1A2E3D;
+    --ink: #E3E9EB;
+    --ink-soft: #A9BAC4;
+    --rule: #2B4253;
+    --accent: #D9715B;
+    --mark-top: var(--paint);
+    --mark-low: var(--signal);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 1.125rem/1.65 "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
+
+a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 600; line-height: 1.1; letter-spacing: 0.005em; }
+h2 { font-size: 2rem; margin: 3rem 0 0.75rem; }
+h3 { font-size: 1.5rem; margin: 0; }
+
+/* header */
+.site-head { background: var(--surface); border-bottom: 1px solid var(--rule); }
+.head-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 0.8rem; padding-bottom: 0.8rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font: 600 1.4rem/1 "Barlow Condensed", sans-serif; }
+nav { display: flex; gap: 1.25rem; font-weight: 500; font-size: 1rem; }
+nav a { color: var(--ink); text-decoration: none; }
+nav a:hover { color: var(--accent); }
+
+/* the mark */
+.mark { display: block; }
+.mark-head { width: 2.6rem; height: auto; }
+.mark .mark-top { fill: var(--mark-top); }
+.mark .mark-low { fill: var(--mark-low); }
+
+/* hero: a ship's hull with its waterline */
+.hero { background: var(--hull); color: var(--paint); }
+.hero .wrap { display: flex; align-items: center; gap: 2rem; padding-top: 3.5rem; padding-bottom: 3rem; }
+.hero h1 { font-size: clamp(2.6rem, 8vw, 4.5rem); margin: 0; }
+.hero .claim { color: var(--hull-text); font-weight: 500; font-size: 1.25rem; margin: 0.4rem 0 0; }
+.hero .crumb { margin: 0 0 0.4rem; font-weight: 500; }
+.hero .crumb a { color: var(--hull-text); }
+.mark-hero { width: clamp(7rem, 22vw, 11rem); flex: none; }
+.hero .mark .mark-top { fill: var(--paint); }
+.hero .mark .mark-low { fill: var(--signal); }
+.waterline { height: 2.25rem; background: var(--antifouling); border-top: 6px solid var(--paint); }
+
+/* content */
+.content { padding-top: 2.5rem; padding-bottom: 4rem; }
+.lead { font-size: 1.3rem; line-height: 1.55; margin-top: 0; }
+.tool { background: var(--surface); border: 1px solid var(--rule); border-left: 6px solid var(--accent); padding: 1.25rem 1.5rem; }
+.tool p { margin: 0.6rem 0 0; }
+.tool-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.tool h3 a { color: var(--ink); text-decoration: none; }
+.tool h3 a:hover { color: var(--accent); }
+.status { font-size: 0.95rem; font-weight: 500; color: var(--ink-soft); }
+.meta { color: var(--ink-soft); font-size: 1rem; }
+
+.checks dt { font: 600 1.35rem/1.2 "Barlow Condensed", sans-serif; margin-top: 1.25rem; }
+.checks dd { margin: 0.25rem 0 0; }
+ul { padding-left: 1.25rem; }
+li { margin: 0.3rem 0; }
+.note { background: var(--surface); border: 1px solid var(--rule); padding: 0.9rem 1.2rem; margin-top: 0; }
+.todo { color: var(--ink-soft); font-style: italic; }
+
+/* footer */
+.site-foot { border-top: 1px solid var(--rule); background: var(--surface); }
+.foot-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 1.25rem; padding-bottom: 1.25rem; font-size: 1rem; color: var(--ink-soft); }
+.foot-inner p { margin: 0; display: flex; gap: 1.25rem; }
+
+@media (max-width: 34rem) {
+  .hero .wrap { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding-top: 2.5rem; }
+  h2 { font-size: 1.75rem; }
+}

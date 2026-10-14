@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Localization Text QA – Plimsoll Tools</title>
+<meta name="description" content="Find overflowing texts, missing glyphs and placeholder mismatches in every language of your Unity project.">
+<meta property="og:title" content="Localization Text QA – Plimsoll Tools">
+<meta property="og:description" content="Find overflowing texts, missing glyphs and placeholder mismatches in every language of your Unity project.">
+<meta property="og:image" content="https://plimsolltools.com/assets/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/BarlowCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="../../index.html"><svg class="mark mark-head" viewBox="-61 -41 122 82" aria-hidden="true"><path class="mark-top" d="M-38.96 -9.05A40 40 0 0 1 38.96 -9.05L29.13 -9.05A30.5 30.5 0 0 0 -29.13 -9.05Z"/><path class="mark-low" d="M-38.96 9.05A40 40 0 0 0 38.96 9.05L29.13 9.05A30.5 30.5 0 0 1 -29.13 9.05Z"/><g class="mark-low"><rect x="-60" y="-4.75" width="120" height="9.5"/></g></svg><span>Plimsoll Tools</span></a>
+    <nav aria-label="Main"><a href="../../tools/localization-text-qa/index.html">Localization Text QA</a><a href="../../support.html">Support</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap"><div><p class="crumb"><a href="../../index.html">Tools</a></p><h1>Localization Text QA</h1>
+<p class="claim">Every language, every text, one scan.</p></div></div><div class="waterline" aria-hidden="true"></div></section>
+<main class="wrap content">
+
+<p class="note">This tool is in development. The documentation below grows with it.</p>
+
+<h2>What it checks</h2>
+<dl class="checks">
+  <dt>Text overflow</dt><dd>Measures every localized TextMeshPro text in every language against its box, including texts that only fit because Auto Size shrank them to the minimum.</dd>
+  <dt>Missing glyphs</dt><dd>Checks every character of every translation against the font that will draw it, through TextMeshPro's real fallback chain, including fonts that change per language.</dd>
+  <dt>Placeholder mismatches</dt><dd>Compares smart-string placeholders between languages and flags extra, missing or changed placeholders before they break at runtime.</dd>
+</dl>
+
+<h2>Requirements</h2>
+<ul>
+  <li>Unity 6</li>
+  <li>Unity Localization package</li>
+  <li>TextMeshPro (UI Toolkit text and legacy UI Text are not checked)</li>
+</ul>
+
+<h2>Installation</h2>
+<!-- TODO: Import aus dem Asset Store, Menüpfad zum Fenster -->
+<p class="todo">Coming with the first release.</p>
+
+<h2>Your first scan</h2>
+<!-- TODO: Scan-Umfang wählen, Scan starten, Ergebnisliste lesen, Treffer anklicken -->
+<p class="todo">Coming with the first release.</p>
+
+<h2>Settings</h2>
+<!-- TODO: Beispielwerte für Platzhalter, Referenzsprache, Ignorieren-Liste -->
+<p class="todo">Coming with the first release.</p>
+
+<h2>Safety and known limits</h2>
+<ul>
+  <li>The scan never saves or dirties your scenes, prefabs, string tables or font assets.</li>
+  <li>Dynamic font atlases may grow in memory during a scan, exactly as when TextMeshPro renders text in the Scene view.</li>
+  <li>Dynamic OS fonts are reported as not checked: they depend on the fonts installed on the player's device.</li>
+  <li>Scanning is blocked while the Font Asset Creator is open.</li>
+</ul>
+
+<h2>Changelog</h2>
+<!-- TODO: Versionen eintragen, neueste zuerst -->
+<p class="todo">No releases yet.</p>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <p><a href="mailto:support@plimsolltools.com">support@plimsolltools.com</a></p>
+    <p><a href="../../impressum.html">Impressum</a> <a href="../../datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+</body>
+</html>
