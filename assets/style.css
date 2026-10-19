@@ -55,7 +55,7 @@ h3 { font-size: 1.5rem; margin: 0; }
 .site-head { background: var(--surface); border-bottom: 1px solid var(--rule); }
 .head-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: 0.8rem; padding-bottom: 0.8rem; }
 .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font: 600 1.4rem/1 "Barlow Condensed", sans-serif; }
-nav { display: flex; gap: 1.25rem; font-weight: 500; font-size: 1rem; }
+nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; font-weight: 500; font-size: 1rem; }
 nav a { color: var(--ink); text-decoration: none; }
 nav a:hover { color: var(--accent); }
 

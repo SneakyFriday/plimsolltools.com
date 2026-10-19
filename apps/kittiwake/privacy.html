@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kittiwake Privacy Policy – Plimsoll Tools</title>
+<meta name="description" content="Privacy policy of the Kittiwake app.">
+<meta property="og:title" content="Kittiwake Privacy Policy – Plimsoll Tools">
+<meta property="og:description" content="Privacy policy of the Kittiwake app.">
+<meta property="og:image" content="https://plimsolltools.com/assets/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/BarlowCondensed-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="../../index.html"><svg class="mark mark-head" viewBox="-61 -41 122 82" aria-hidden="true"><path class="mark-top" d="M-38.96 -9.05A40 40 0 0 1 38.96 -9.05L29.13 -9.05A30.5 30.5 0 0 0 -29.13 -9.05Z"/><path class="mark-low" d="M-38.96 9.05A40 40 0 0 0 38.96 9.05L29.13 9.05A30.5 30.5 0 0 1 -29.13 9.05Z"/><g class="mark-low"><rect x="-60" y="-4.75" width="120" height="9.5"/></g></svg><span>Plimsoll Tools</span></a>
+    <nav aria-label="Main"><a href="../../tools/localization-text-qa/index.html">Localization Text QA</a><a href="../../apps/kittiwake/index.html">Kittiwake</a><a href="../../support.html">Support</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="wrap"><div><p class="crumb"><a href="index.html">Kittiwake</a></p><h1>Privacy Policy</h1></div></div><div class="waterline" aria-hidden="true"></div></section>
+<main class="wrap content">
+
+<p class="note">This policy covers the Kittiwake app. It is a translation; the <a href="datenschutz.html" lang="de">German version</a> is authoritative.</p>
+
+<h2>In short</h2>
+<p>Kittiwake has no server, no account and no internet access. Your data stays on your phone and only goes, encrypted, to the phones of the people you share your household with. I, the developer, receive none of your data: no receipts, amounts, names, usage statistics or crash reports. There are no ads and no tracking.</p>
+
+<h2>Controller</h2>
+<p>Marc Freitag, Paul-Steffen-Str. 17, 24582 Bordesholm, Germany<br>Email: <a href="mailto:support@plimsolltools.com">support@plimsolltools.com</a></p>
+
+<h2>What data the app processes</h2>
+<p>The app processes all of the following data on your device only:</p>
+<ul>
+  <li><strong>Receipts:</strong> photo or file of the receipt (e.g. a PDF e-receipt), recognized text, amount, purchase date, who paid, split, comment.</li>
+  <li><strong>Household:</strong> member names, their shares, color and an optional profile picture.</li>
+  <li><strong>Settlement:</strong> monthly settlements and balances carried over to the next month.</li>
+  <li><strong>Technical:</strong> a randomly generated device ID for syncing, the shared household key, settings (e.g. language, light and dark mode) and a trash for deleted receipts that is emptied after 30 days.</li>
+</ul>
+<p>Text recognition uses Google ML Kit. It runs entirely on the device; the photo is not transmitted. ML Kit's usage reporting to Google is disabled in Kittiwake, and the app has no permission to access the internet.</p>
+<p>Backing up app data to Google's cloud (Android backup) is deliberately disabled.</p>
+
+<h2>Syncing between phones</h2>
+<p>When you share your household with others, the phones sync directly with each other: nearby via Bluetooth and Wi-Fi (Google Nearby Connections), or through a sync file that you send yourself.</p>
+<ul>
+  <li>Synced are receipts with photos, members with profile pictures, shares and monthly settlements. Card numbers and similar payment data are removed from the recognized text; they remain visible on the photo itself.</li>
+  <li>Receipt photos only go to your household's devices: the full photo when syncing nearby, only a small thumbnail in the sync file. Received photos are then also stored on those devices, including their trash and backups.</li>
+  <li>All sync data is end-to-end encrypted (AES-256-GCM). Only the household's devices have the key. It is only passed on in person, through the invitation QR code. Nobody else can read the data, not even me.</li>
+  <li>When syncing nearby, the app broadcasts a changing identifier that lets the household's devices recognize each other. It contains no names and no permanent device ID.</li>
+  <li>Nearby Connections is part of Google Play services, a separate Google app on your phone. Its processing is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+</ul>
+<p>You decide who you share with. Anyone who has joined your household has the shared data on their device. With “Renew key” you can stop a former member from receiving new data.</p>
+
+<h2>Export and backup</h2>
+<ul>
+  <li><strong>PDF and CSV export:</strong> The monthly report is only created when you ask for it and is handed to the app or location you choose through Android's share menu or save dialog. That app or service is then responsible for further processing.</li>
+  <li><strong>Backup:</strong> The backup file contains all app data including photos and is encrypted with your password (AES-256-GCM, key derived from the password with PBKDF2). You decide where to store it. Without the password nobody can open it, not even me. I cannot reset a forgotten password.</li>
+</ul>
+
+<h2>Permissions</h2>
+<dl class="checks">
+  <dt>Camera</dt><dd>Photograph receipts, scan the invitation QR code, take a profile picture.</dd>
+  <dt>Select photos</dt><dd>Choose a picture from the gallery. Through Android's photo picker, the app only sees the chosen picture.</dd>
+  <dt>Nearby devices, Bluetooth, Wi-Fi state</dt><dd>Sync with your household's phones nearby.</dd>
+  <dt>Location (Android 12 and earlier only)</dt><dd>Older Android versions require it for Bluetooth scanning. The app neither determines nor stores your location. From Android 13 on, it does not ask for it.</dd>
+</dl>
+<p>You can revoke any permission in Android's settings at any time. The affected feature is then unavailable.</p>
+
+<h2>No sharing, no ads, no analytics</h2>
+<p>I collect no data through the app and therefore share none with third parties. The app contains no ads, no analytics or tracking tools and no crash reporting that sends data.</p>
+
+<h2>Google Play</h2>
+<p>When you download the app from Google Play, Google processes data (e.g. your Google account and device data) under its own responsibility. I have no influence on this. <a href="https://policies.google.com/privacy">Google's privacy policy</a> applies.</p>
+
+<h2>Contact by email</h2>
+<p>If you write to me about the app, the section “Kontakt per E-Mail” of the <a href="../../datenschutz.html" lang="de">website's privacy policy</a> applies.</p>
+
+<h2>Deletion</h2>
+<p>You can delete single receipts (they stay in the trash for 30 more days) or delete everything by uninstalling the app or clearing its data in Android's settings. Data already synced to other household members' phones stays there until it is deleted there. You delete backup and export files where you stored them.</p>
+
+<h2>Your rights</h2>
+<p>Under the GDPR you have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object (Art. 21). Since I receive no personal data from you through the app, all data is in your own hands. I am happy to answer questions at <a href="mailto:support@plimsolltools.com">support@plimsolltools.com</a>.</p>
+<p>You also have the right to lodge a complaint with a data protection authority, for example the one where you live or the one responsible for me: Unabhängiges Landeszentrum für Datenschutz Schleswig-Holstein (ULD), Holstenstraße 98, 24103 Kiel, Germany.</p>
+
+<h2>Children</h2>
+<p>The app is not directed at children under 16.</p>
+
+<h2>Changes</h2>
+<p>If the app changes in a way that affects how data is handled, I will update this policy. The version published here applies.</p>
+<p>Last updated: October 2026</p>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <p><a href="mailto:support@plimsolltools.com">support@plimsolltools.com</a></p>
+    <p><a href="../../impressum.html">Impressum</a> <a href="../../datenschutz.html">Datenschutz</a></p>
+  </div>
+</footer>
+</body>
+</html>
