@@ -34,10 +34,10 @@
 <h2>What data the app processes</h2>
 <p>The app processes all of the following data on your device only:</p>
 <ul>
-  <li><strong>Receipts:</strong> photo or file of the receipt (e.g. a PDF e-receipt), recognized text, amount, purchase date, who paid, split, comment.</li>
-  <li><strong>Household:</strong> member names, their shares, color and an optional profile picture.</li>
+  <li><strong>Receipts:</strong> photo or file of the receipt (e.g. a PDF e-receipt), recognized text, amount, purchase date, who paid, split, comment, category and whether the entry repeats monthly or yearly.</li>
+  <li><strong>Household:</strong> member names, their shares, color and an optional profile picture, and whether Kittiwake Plus is unlocked.</li>
   <li><strong>Settlement:</strong> monthly settlements and balances carried over to the next month.</li>
-  <li><strong>Technical:</strong> a randomly generated device ID for syncing, the shared household key, settings (e.g. language, light and dark mode) and a trash for deleted receipts that is emptied after 30 days.</li>
+  <li><strong>Technical:</strong> a randomly generated device ID for syncing, the shared household key, settings (e.g. language, light and dark mode) a trash for deleted receipts that is emptied after 30 days, and a diagnostic log (at most 200 entries: the app's error messages and the reasons Android closed it, no receipt contents).</li>
 </ul>
 <p>Text recognition uses Google ML Kit. It runs entirely on the device; the photo is not transmitted. ML Kit's usage reporting to Google is disabled in Kittiwake, and the app has no permission to access the internet.</p>
 <p>Backing up app data to Google's cloud (Android backup) is deliberately disabled.</p>
@@ -45,7 +45,7 @@
 <h2>Syncing between phones</h2>
 <p>When you share your household with others, the phones sync directly with each other: nearby via Bluetooth and Wi-Fi (Google Nearby Connections), or through a sync file that you send yourself.</p>
 <ul>
-  <li>Synced are receipts with photos, members with profile pictures, shares and monthly settlements. Card numbers and similar payment data are removed from the recognized text; they remain visible on the photo itself.</li>
+  <li>Synced are receipts with photos, members with profile pictures, shares, monthly settlements and whether Kittiwake Plus is unlocked. Card numbers and similar payment data are removed from the recognized text; they remain visible on the photo itself.</li>
   <li>Receipt photos only go to your household's devices: the full photo when syncing nearby, only a small thumbnail in the sync file. Received photos are then also stored on those devices, including their trash and backups.</li>
   <li>All sync data is end-to-end encrypted (AES-256-GCM). Only the household's devices have the key. It is only passed on in person, through the invitation QR code. Nobody else can read the data, not even me.</li>
   <li>When syncing nearby, the app broadcasts a changing identifier that lets the household's devices recognize each other. It contains no names and no permanent device ID.</li>
@@ -55,8 +55,9 @@
 
 <h2>Export and backup</h2>
 <ul>
-  <li><strong>PDF and CSV export:</strong> The monthly report is only created when you ask for it and is handed to the app or location you choose through Android's share menu or save dialog. That app or service is then responsible for further processing.</li>
+  <li><strong>PDF and CSV export:</strong> Monthly and yearly reports are only created when you ask for them and are handed to the app or location you choose through Android's share menu or save dialog. That app or service is then responsible for further processing.</li>
   <li><strong>Backup:</strong> The backup file contains all app data including photos and is encrypted with your password (AES-256-GCM, key derived from the password with PBKDF2). You decide where to store it. Without the password nobody can open it, not even me. I cannot reset a forgotten password.</li>
+  <li><strong>Diagnostic log:</strong> It only leaves the phone if you pass it on yourself through the share menu, for example to me when reporting a problem.</li>
 </ul>
 
 <h2>Permissions</h2>
@@ -73,6 +74,7 @@
 
 <h2>Google Play</h2>
 <p>When you download the app from Google Play, Google processes data (e.g. your Google account and device data) under its own responsibility. I have no influence on this. <a href="https://policies.google.com/privacy">Google's privacy policy</a> applies.</p>
+<p>Purchases of <strong>Kittiwake Plus</strong> are handled by Google Play (Google Play Billing). I receive no payment data and no personal details. The app only asks the Play Store app on your phone whether Plus has been bought and stores “Plus: yes” in the household. The purchase receipt itself never leaves your phone, not even when syncing. The usage reporting to Google built into the billing library is disabled in Kittiwake.</p>
 
 <h2>Contact by email</h2>
 <p>If you write to me about the app, the section “Contact by email” of the <a href="../../privacy.html">website's privacy policy</a> applies.</p>
@@ -89,7 +91,7 @@
 
 <h2>Changes</h2>
 <p>If the app changes in a way that affects how data is handled, I will update this policy. The version published here applies.</p>
-<p>Last updated: October 2026</p>
+<p>Last updated: November 2026</p>
 
 </main>
 <footer class="site-foot">

@@ -34,10 +34,10 @@
 <h2>Welche Daten die App verarbeitet</h2>
 <p>Alle folgenden Daten verarbeitet die App ausschließlich auf deinem Gerät:</p>
 <ul>
-  <li><strong>Bons:</strong> Foto oder Datei des Kassenbons (z. B. ein eBon als PDF), erkannter Text, Betrag, Einkaufsdatum, wer bezahlt hat, Aufteilung, Kommentar.</li>
-  <li><strong>Haushalt:</strong> Namen der Mitglieder, ihre Anteile, Farbe und optional ein Profilbild.</li>
+  <li><strong>Bons:</strong> Foto oder Datei des Kassenbons (z. B. ein eBon als PDF), erkannter Text, Betrag, Einkaufsdatum, wer bezahlt hat, Aufteilung, Kommentar, Kategorie und ob sich der Eintrag monatlich oder jährlich wiederholt.</li>
+  <li><strong>Haushalt:</strong> Namen der Mitglieder, ihre Anteile, Farbe und optional ein Profilbild, außerdem ob Kittiwake Plus freigeschaltet ist.</li>
   <li><strong>Abrechnung:</strong> Monatsausgleiche und Überträge in den Folgemonat.</li>
-  <li><strong>Technisches:</strong> eine zufällig erzeugte Geräte-Kennung für den Abgleich, der gemeinsame Haushaltsschlüssel, Einstellungen (z. B. Sprache, Hell- und Dunkelmodus) und ein Papierkorb gelöschter Bons, der nach 30 Tagen geleert wird.</li>
+  <li><strong>Technisches:</strong> eine zufällig erzeugte Geräte-Kennung für den Abgleich, der gemeinsame Haushaltsschlüssel, Einstellungen (z. B. Sprache, Hell- und Dunkelmodus) ein Papierkorb gelöschter Bons, der nach 30 Tagen geleert wird, und ein Diagnoseprotokoll (höchstens 200 Einträge: Fehlermeldungen der App und Gründe, warum Android sie beendet hat, ohne Bon-Inhalte).</li>
 </ul>
 <p>Die Texterkennung nutzt Google ML Kit. Sie läuft vollständig auf dem Gerät, das Foto wird dafür nicht übertragen. Die in ML Kit enthaltene Nutzungsstatistik an Google ist in Kittiwake abgeschaltet, zudem hat die App keine Berechtigung für Internetzugriff.</p>
 <p>Die Sicherung der App-Daten in die Google-Cloud (Android-Sicherung) ist bewusst deaktiviert.</p>
@@ -45,7 +45,7 @@
 <h2>Abgleich zwischen Handys</h2>
 <p>Wenn du deinen Haushalt mit anderen teilst, gleichen sich die Handys direkt untereinander ab: in der Nähe über Bluetooth und WLAN (Google Nearby Connections) oder über eine Sync-Datei, die du selbst verschickst.</p>
 <ul>
-  <li>Übertragen werden Bons mit Foto, Mitglieder mit Profilbild, Anteile und Monatsausgleiche. Kartennummern und ähnliche Zahlungsdaten werden aus dem erkannten Text entfernt, auf dem Foto selbst bleiben sie sichtbar.</li>
+  <li>Übertragen werden Bons mit Foto, Mitglieder mit Profilbild, Anteile, Monatsausgleiche und ob Kittiwake Plus freigeschaltet ist. Kartennummern und ähnliche Zahlungsdaten werden aus dem erkannten Text entfernt, auf dem Foto selbst bleiben sie sichtbar.</li>
   <li>Bon-Fotos gehen nur an die Geräte deines Haushalts: das volle Foto beim Abgleich in der Nähe, in der Sync-Datei nur ein kleines Vorschaubild. Empfangene Fotos liegen dann auch auf diesen Geräten, einschließlich Papierkorb und Sicherungen.</li>
   <li>Alle Abgleich-Daten sind Ende-zu-Ende verschlüsselt (AES-256-GCM). Den Schlüssel haben nur die Geräte des Haushalts. Er wird ausschließlich über den QR-Code der Einladung vor Ort weitergegeben. Niemand sonst kann die Daten lesen, auch ich nicht.</li>
   <li>Beim Abgleich in der Nähe sendet die App eine wechselnde Kennung aus, an der sich die Geräte des Haushalts erkennen. Sie enthält keine Namen und keine dauerhafte Geräte-ID.</li>
@@ -55,8 +55,9 @@
 
 <h2>Export und Sicherung</h2>
 <ul>
-  <li><strong>PDF- und CSV-Export:</strong> Der Monatsbericht wird nur auf deinen Wunsch erstellt und über das Teilen-Menü oder den Speicherdialog von Android an die App oder den Ort übergeben, den du auswählst. Für die weitere Verarbeitung ist dann diese App oder dieser Dienst verantwortlich.</li>
+  <li><strong>PDF- und CSV-Export:</strong> Monats- und Jahresberichte werden nur auf deinen Wunsch erstellt und über das Teilen-Menü oder den Speicherdialog von Android an die App oder den Ort übergeben, den du auswählst. Für die weitere Verarbeitung ist dann diese App oder dieser Dienst verantwortlich.</li>
   <li><strong>Sicherung:</strong> Die Sicherungsdatei enthält alle App-Daten einschließlich Fotos und ist mit deinem Passwort verschlüsselt (AES-256-GCM, Schlüssel per PBKDF2 aus dem Passwort). Wo du sie speicherst, entscheidest du. Ohne das Passwort kann sie niemand öffnen, auch ich nicht. Ein vergessenes Passwort kann ich nicht zurücksetzen.</li>
+  <li><strong>Diagnoseprotokoll:</strong> Es verlässt das Handy nur, wenn du es selbst über das Teilen-Menü weitergibst, etwa an mich bei einer Fehlermeldung.</li>
 </ul>
 
 <h2>Berechtigungen</h2>
@@ -73,6 +74,7 @@
 
 <h2>Google Play</h2>
 <p>Beim Herunterladen der App über Google Play verarbeitet Google Daten (z. B. dein Google-Konto und Gerätedaten) in eigener Verantwortung. Darauf habe ich keinen Einfluss. Es gilt die <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a>.</p>
+<p>Den Kauf von <strong>Kittiwake Plus</strong> wickelt Google Play ab (Google Play Billing). Ich erhalte dabei keine Zahlungsdaten und keine Angaben zu deiner Person. Die App fragt nur bei der Play-Store-App auf deinem Handy nach, ob Plus gekauft wurde, und merkt sich im Haushalt „Plus: ja“. Die Kaufbestätigung selbst verlässt dein Handy nicht, auch nicht beim Abgleich. Die in der Kauf-Bibliothek enthaltene Nutzungsstatistik an Google ist in Kittiwake abgeschaltet.</p>
 
 <h2>Kontakt per E-Mail</h2>
 <p>Wenn du mir zur App schreibst, gilt der Abschnitt „Kontakt per E-Mail“ der <a href="../../datenschutz.html">Datenschutzerklärung der Website</a>.</p>
@@ -89,7 +91,7 @@
 
 <h2>Änderungen</h2>
 <p>Ändert sich die App so, dass sich der Umgang mit Daten ändert, passe ich diese Erklärung an. Es gilt die jeweils hier veröffentlichte Fassung.</p>
-<p>Stand: Oktober 2026</p>
+<p>Stand: November 2026</p>
 
 </main>
 <footer class="site-foot">
